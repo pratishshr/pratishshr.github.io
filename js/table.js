@@ -17,8 +17,19 @@ for(var i = 0; i <= data.length; i++){
 
   for(var j = 0; j <= 3; j++){ //for table data
     var td = document.createElement('td');
-    td.innerHTML = data[i-1][columns[j]];
+    var a = document.createElement('a');
+    var img = document.createElement('img');
+
+    if( j == 1){
+      img.src = 'images/' + data[i-1].image ;
+      a.href = data[i-1].link;
+    }
+    
+    a.innerHTML = data[i-1][columns[j]];
+    
     td.style.border = "1px solid black";
+    td.appendChild(img);
+    td.appendChild(a);
     tr.appendChild(td);
   }
   table.appendChild(tr);
